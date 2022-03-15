@@ -6,14 +6,16 @@ function createDownloadsArray() {
   return {
     subscribe,
     add: (download) => update((downloads) => [...downloads, download]),
-    remove: (downloadName: string) =>
+    remove: (downloadName) =>
       update((downloads) =>
         downloads.filter(({ name }) => name !== downloadName)
       ),
-    update: (downloadName: string, update) =>
+    update: (downloadName, downloadUpdate) =>
       update((downloads) =>
         downloads.map((download) =>
-          download.name === downloadName ? { ...download, ...update } : download
+          download.name === downloadName
+            ? { ...download, ...downloadUpdate }
+            : download
         )
       ),
   }

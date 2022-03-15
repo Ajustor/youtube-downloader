@@ -1,5 +1,5 @@
 <script lang="ts">
-  import DownloadElement from 'src/components/DownloadElement.svelte'
+  import DownloadElement from './DownloadElement.svelte'
   import { downloads } from '../stores/downloads'
 </script>
 
